@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Gold Fitness Repair Premium Brand Palette */
+    /* Primary Gold: #D4AF37 = 45 76% 52% */
+    /* Bronze CTA: #C99700 = 43 100% 40% */
+    /* Deep Charcoal: #111111 = 0 0% 7% */
+    /* Soft Black: #1A1A1A = 0 0% 10% */
+    /* Ivory Text: #F5F3EC = 43 33% 94% */
+    /* Steel Gray: #9A9A9A = 0 0% 60% */
+
+    --background: 0 0% 7%;
+    --foreground: 43 33% 94%;
+    
+    /* Primary: Gold */
+    --primary: 45 76% 52%;
+    --primary-foreground: 0 0% 7%;
+    --primary-glow: 43 100% 40%;
+    
+    /* Secondary: Soft Black */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 43 33% 94%;
+    
+    /* Accent: Bronze */
+    --accent: 43 100% 40%;
+    --accent-foreground: 0 0% 7%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 43 33% 94%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 33% 94%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 76% 52%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --radius: 0.5rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(45 76% 52%), hsl(43 100% 40%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 7%), hsl(0 0% 10%));
+    --gradient-hero: linear-gradient(to bottom, hsl(0 0% 7% / 0.95), hsl(0 0% 10% / 0.98));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(45 76% 52% / 0.3);
+    --shadow-strong: 0 20px 50px -10px hsl(0 0% 0% / 0.6);
+    --shadow-card: 0 4px 20px -2px hsl(0 0% 0% / 0.3);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 43 33% 94%;
+    --sidebar-primary: 45 76% 52%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 43 33% 94%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 76% 52%;
+
+    /* Custom brand colors for direct use */
+    --gold: 45 76% 52%;
+    --bronze: 43 100% 40%;
+    --charcoal: 0 0% 7%;
+    --soft-black: 0 0% 10%;
+    --ivory: 43 33% 94%;
+    --steel: 0 0% 60%;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 43 33% 94%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 43 33% 94%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 33% 94%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 43 100% 40%;
+    --accent-foreground: 0 0% 7%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    
+    --gradient-hero: linear-gradient(to bottom, hsl(0 0% 7% / 0.95), hsl(0 0% 10% / 0.98));
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 43 33% 94%;
+    --sidebar-primary: 45 76% 52%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 43 33% 94%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 45 76% 52%;
+  }
+
+  /* Light sections */
+  .section-light {
+    --background: 43 33% 94%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --muted: 43 20% 90%;
+    --muted-foreground: 0 0% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    background: hsl(var(--accent));
+    @apply text-accent-foreground font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary:hover {
+    background: hsl(var(--primary));
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-105 active:scale-95;
+  }
+  
+  .section-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-primary;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-2;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover:hover {
+    box-shadow: var(--shadow-strong);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Light section styling */
+  .bg-section-light {
+    background-color: hsl(43 33% 94%);
+    color: hsl(0 0% 7%);
+  }
+  
+  .bg-section-light .text-muted-foreground {
+    color: hsl(0 0% 40%);
+  }
+
+  /* Dark section styling */
+  .bg-section-dark {
+    background-color: hsl(0 0% 7%);
+  }
+
+  .bg-section-soft {
+    background-color: hsl(0 0% 10%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out;
+  }
+  
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}

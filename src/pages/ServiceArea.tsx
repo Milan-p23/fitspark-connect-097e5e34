@@ -145,6 +145,38 @@ const ServiceArea = () => {
               </CardContent>
             </Card>
 
+            {/* FEATURED CITIES */}
+            {(() => {
+              const featured = Object.values(CITY_DATA).filter(c => c.featuredBlurb);
+              if (featured.length === 0) return null;
+              return (
+                <Card className="max-w-5xl mx-auto mb-10 bg-card border-border">
+                  <CardContent className="p-8">
+                    <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                      Featured Service Areas
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {featured.map(city => (
+                        <Link
+                          key={city.slug}
+                          to={`/service-area/${city.slug}`}
+                          className="block p-5 rounded-xl border border-border bg-muted/30 hover:bg-primary/10 hover:border-primary transition-colors group"
+                        >
+                          <div className="flex items-center gap-2 mb-2">
+                            <MapPin className="text-primary" size={20} />
+                            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                              {city.name}
+                            </h3>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{city.featuredBlurb}</p>
+                        </Link>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })()}
+
             {/* CITY LIST */}
             <Card className="max-w-5xl mx-auto mb-10 bg-card border-border">
               <CardContent className="p-8">

@@ -167,11 +167,11 @@ const Home = () => {
             <h1 className="section-heading text-5xl md:text-6xl lg:text-7xl mb-6 animate-fade-up">
               Fast, reliable treadmill & gym equipment repair.
             </h1>
-         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-up">
-  Transparent pricing. Certified technicians. Reliable results. Complete fitness equipment service including repairs, preventative maintenance, and professional assembly & disassembly for treadmills, ellipticals, bikes, rowers, and more.
-</p>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto animate-fade-up">
+              Transparent pricing. Certified technicians. Reliable results.
+            </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up mb-10">
               <Link to="/book">
                 <Button className="btn-primary text-lg px-10 py-6">
                   Book a Service
@@ -182,6 +182,62 @@ const Home = () => {
                   View Services
                 </Button>
               </Link>
+            </div>
+
+            {/* Equipment Icons Strip */}
+            <div className="animate-fade-up">
+              <div className="flex items-center justify-center gap-6 md:gap-10 mb-4">
+                {/* Treadmill icon */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-7 md:h-7 text-primary">
+                      <path d="M3 21h18" />
+                      <path d="M5 21V7l7-4 7 4v14" />
+                      <path d="M9 21v-4h6v4" />
+                      <line x1="5" y1="11" x2="19" y2="11" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-muted-foreground hidden sm:block">Treadmills</span>
+                </div>
+                {/* Elliptical icon */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-7 md:h-7 text-primary">
+                      <ellipse cx="12" cy="12" rx="8" ry="5" />
+                      <circle cx="12" cy="12" r="2" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-muted-foreground hidden sm:block">Ellipticals</span>
+                </div>
+                {/* Bike icon */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-7 md:h-7 text-primary">
+                      <circle cx="6" cy="17" r="3" />
+                      <circle cx="18" cy="17" r="3" />
+                      <path d="M6 17L9 9h6l3 8" />
+                      <path d="M9 9l3 3 3-3" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-muted-foreground hidden sm:block">Bikes</span>
+                </div>
+                {/* Weights icon */}
+                <div className="flex flex-col items-center gap-1.5">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 md:w-7 md:h-7 text-primary">
+                      <rect x="2" y="9" width="4" height="6" rx="1" />
+                      <rect x="18" y="9" width="4" height="6" rx="1" />
+                      <line x1="6" y1="12" x2="18" y2="12" />
+                      <rect x="7" y="8" width="3" height="8" rx="1" />
+                      <rect x="14" y="8" width="3" height="8" rx="1" />
+                    </svg>
+                  </div>
+                  <span className="text-xs text-muted-foreground hidden sm:block">Home Gyms</span>
+                </div>
+              </div>
+              <p className="text-sm md:text-base text-muted-foreground tracking-wide">
+                Treadmills • Ellipticals • Bikes • Home Gyms • Commercial Equipment
+              </p>
             </div>
           </div>
         </section>
